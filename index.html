@@ -1,2 +1,56 @@
-My First Repo
-<h2>Testing Local to git<h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       .tab-content {
+    display: none;
+}
+.tab-content.is-open {
+    display: block;
+    /* background-color: red; */
+}
+.is-active{
+  background-color: red;
+  color:#fff;
+}
+    </style>
+</head>
+<body>
+
+
+<div class="tabs">
+      <button class="tab is-active" data-tab-trigger="1">Tab1</button>
+      <button class="tab" data-tab-trigger="2">Tab2</button>
+      <button class="tab" data-tab-trigger="3">Tab3</button>
+</div>
+<div class="tab-content__outer">
+  <div class="tab-content is-open" data-tab-content="1">
+      Helloo tab1
+  </div>
+  <div class="tab-content" data-tab-content="2">
+    Helloo this is tab2
+  </div>
+  <div class="tab-content" data-tab-content="3">
+    Helloo i m here tab3
+  </div>
+</div>
+<script>
+var tabTriggerBtns = document.querySelectorAll('button');
+console.log(tabTriggerBtns);
+tabTriggerBtns.forEach(function(tabTriggerBtn, index){
+  console.log(tabTriggerBtns);
+    tabTriggerBtn.addEventListener('click', function(){
+      console.log("button click");
+ var currentTabData = document.querySelector('.tab-content[data-tab-content="' + this.dataset.tabTrigger + '"]');
+document.querySelector('.tab-content.is-open').classList.remove('is-open');
+ document.querySelector('button.tab.is-active').classList.remove('is-active');
+ // add classes
+ currentTabData.classList.add('is-open');
+ this.classList.add('is-active');
+    });
+});
+</script>
+
+   
+</body>
+</html> 
